@@ -21,7 +21,10 @@ import {
   Building2,
   HardHat,
   Briefcase,
-  LayoutGrid
+  LayoutGrid,
+  Search,
+  Wrench,
+  LineChart
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -478,6 +481,83 @@ const Index = () => {
               <Sparkles className="w-5 h-5 inline-block text-primary mr-2 -mt-1" />
               Et ce n'est qu'un aperçu : nos solutions s'adaptent à votre activité, quel que soit votre métier.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Notre Approche (Méthodologie) */}
+      <section className="py-20 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              Notre approche
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Une méthode éprouvée en 4 étapes pour intégrer l'automatisation sans perturber votre activité.
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto relative">
+            {/* Ligne connectrice (visible uniquement sur desktop) */}
+            <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent -translate-y-1/2 z-0"></div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+              {/* Etape 1 : Analyse */}
+              <div className="bg-card border border-border/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative">
+                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                  1
+                </div>
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto md:mx-0">
+                  <Search className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3 text-center md:text-left">Analyse</h3>
+                <p className="text-muted-foreground text-sm text-center md:text-left leading-relaxed">
+                  Nous étudions votre organisation et identifions les opportunités d'automatisation.
+                </p>
+              </div>
+
+              {/* Etape 2 : Conception */}
+              <div className="bg-card border border-border/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative md:mt-8">
+                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                  2
+                </div>
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto md:mx-0">
+                  <Lightbulb className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3 text-center md:text-left">Conception</h3>
+                <p className="text-muted-foreground text-sm text-center md:text-left leading-relaxed">
+                  Nous concevons un système adapté à votre activité et à vos outils.
+                </p>
+              </div>
+
+              {/* Etape 3 : Mise en place */}
+              <div className="bg-card border border-border/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative">
+                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                  3
+                </div>
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto md:mx-0">
+                  <Wrench className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3 text-center md:text-left">Mise en place</h3>
+                <p className="text-muted-foreground text-sm text-center md:text-left leading-relaxed">
+                  Nous installons les automatisations et les intégrons dans votre fonctionnement.
+                </p>
+              </div>
+
+              {/* Etape 4 : Optimisation */}
+              <div className="bg-card border border-border/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative md:mt-8">
+                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                  4
+                </div>
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto md:mx-0">
+                  <LineChart className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3 text-center md:text-left">Optimisation</h3>
+                <p className="text-muted-foreground text-sm text-center md:text-left leading-relaxed">
+                  Nous ajustons le système afin qu'il reste parfaitement optimal pour votre entreprise.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

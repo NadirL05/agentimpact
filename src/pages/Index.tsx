@@ -681,45 +681,44 @@ const Index = () => {
       </section>
 
 
-      {/* Conversion Optimizer Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <ConversionOptimizer 
-            variant="primary"
-            showTestimonials={true}
-            showTrustSignals={true}
-          />
-        </div>
-      </section>
+      {/* CTA FINAL Section */}
+      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-[hsl(210,29%,12%)] via-[hsl(210,29%,8%)] to-background border-t border-border/20">
+        {/* Effets de lumière en arrière-plan */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-primary via-[hsl(173,80%,25%)] to-primary">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto text-white">
-            <h2 className="text-3xl font-bold mb-4">
-              Automatisez votre gestion administrative aujourd'hui
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
+              Arrêtez de perdre du temps : <br className="hidden md:block" />
+              <span className="text-primary">transformez-le en croissance !</span>
             </h2>
-            <p className="text-xl mb-8 text-primary-foreground/80">
-              Automatisez votre prospection et multipliez vos transactions immobilières avec l'IA
+            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+              Réservez un appel gratuit et découvrez comment nos solutions d'automatisation peuvent libérer votre temps, optimiser vos process et booster votre activité.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-white text-primary hover:bg-muted font-semibold"
-                onClick={() => navigate('/services')}
+
+            <div className="flex flex-col items-center justify-center">
+              <Button
+                onClick={() => {
+                  trackUserAction('cta_final_click', {
+                    location: 'footer_cta',
+                    button_text: 'Je réserve mon audit gratuit'
+                  });
+                  window.open('https://calendly.com/nadir-lahyani-agentimpact/30min', '_blank');
+                }}
+                size="lg"
+                className="text-xl px-10 py-8 h-auto shadow-[0_0_30px_rgba(var(--primary),0.3)] hover:shadow-[0_0_50px_rgba(var(--primary),0.5)] transition-all duration-300 hover:scale-105"
               >
-                <Rocket className="w-5 h-5 mr-2" />
-                Découvrir les services
+                <Zap className="w-6 h-6 mr-3 animate-pulse" />
+                Je réserve mon audit gratuit
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white/20 backdrop-blur-sm bg-white/10"
-                onClick={() => navigate('/support')}
-              >
-                <MessageSquare className="w-5 h-5 mr-2" />
-                Discuter de mon besoin
-              </Button>
+
+              {/* Texte de réassurance sous le bouton */}
+              <div className="mt-8 inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full border border-white/10">
+                <Clock className="w-5 h-5 text-primary" />
+                <span className="text-sm md:text-base font-medium text-white/80">
+                  Seulement 15 minutes pour comprendre comment nos solutions peuvent booster vos résultats.
+                </span>
+              </div>
             </div>
           </div>
         </div>

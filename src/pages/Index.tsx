@@ -1,20 +1,18 @@
-import { 
-  Brain, 
-  Sparkles, 
-  ArrowRight, 
-  Zap, 
-  Shield, 
-  Users, 
-  TrendingUp, 
-  ChevronRight, 
+import {
+  Brain,
+  Sparkles,
+  ArrowRight,
+  Zap,
+  Shield,
+  Users,
+  TrendingUp,
+  ChevronRight,
   Settings,
   BarChart3,
   Lightbulb,
   CheckCircle,
-  Rocket,
   Clock,
   DollarSign,
-  MessageSquare,
   Code,
   Bot,
   Mail,
@@ -36,11 +34,9 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 import { useAnalytics } from "@/lib/analytics";
-import ConversionOptimizer from "@/components/conversion/ConversionOptimizer";
 import LeadMagnet from "@/components/marketing/LeadMagnet";
 import FloatingActionButton from "@/components/ui/floating-action-button";
 import SEOHead from "@/components/SEOHead";
-import SocialProof from "@/components/marketing/SocialProof";
 import heroImage from "@/assets/hero-supplier-management.jpg";
 import { CalendlyWidget } from "@/components/calendly/CalendlyWidget";
 
@@ -586,8 +582,8 @@ const Index = () => {
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-primary/5 -rotate-12 group-hover:scale-110 transition-transform duration-500" />
               <CardContent className="p-8 relative z-10">
                 <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  {['star-1', 'star-2', 'star-3', 'star-4', 'star-5'].map((id) => (
+                    <Star key={id} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
                 <p className="text-foreground text-lg mb-6 italic leading-relaxed">
@@ -610,8 +606,8 @@ const Index = () => {
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-orange-500/5 -rotate-12 group-hover:scale-110 transition-transform duration-500" />
               <CardContent className="p-8 relative z-10">
                 <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  {['star-1', 'star-2', 'star-3', 'star-4', 'star-5'].map((id) => (
+                    <Star key={id} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
                 <p className="text-foreground text-lg mb-6 italic leading-relaxed">
@@ -634,8 +630,8 @@ const Index = () => {
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-blue-500/5 -rotate-12 group-hover:scale-110 transition-transform duration-500" />
               <CardContent className="p-8 relative z-10">
                 <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  {['star-1', 'star-2', 'star-3', 'star-4', 'star-5'].map((id) => (
+                    <Star key={id} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
                 <p className="text-foreground text-lg mb-6 italic leading-relaxed">
@@ -658,8 +654,8 @@ const Index = () => {
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-purple-500/5 -rotate-12 group-hover:scale-110 transition-transform duration-500" />
               <CardContent className="p-8 relative z-10">
                 <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  {['star-1', 'star-2', 'star-3', 'star-4', 'star-5'].map((id) => (
+                    <Star key={id} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
                 <p className="text-foreground text-lg mb-6 italic leading-relaxed">
@@ -703,7 +699,7 @@ const Index = () => {
                     location: 'footer_cta',
                     button_text: 'Je réserve mon audit gratuit'
                   });
-                  window.open('https://calendly.com/nadir-lahyani-agentimpact/30min', '_blank');
+                  window.open('https://calendly.com/nadir-lahyani-agentimpact/30min', '_blank', 'noopener,noreferrer');
                 }}
                 size="lg"
                 className="text-xl px-10 py-8 h-auto shadow-[0_0_30px_rgba(var(--primary),0.3)] hover:shadow-[0_0_50px_rgba(var(--primary),0.5)] transition-all duration-300 hover:scale-105"

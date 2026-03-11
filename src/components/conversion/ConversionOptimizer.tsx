@@ -61,24 +61,28 @@ export const ConversionOptimizer: React.FC<ConversionOptimizerProps> = ({
       <Card className="border-2 border-primary/30 shadow-lg">
         <CardContent className="p-6 text-center">
           <h3 className="text-2xl font-bold text-foreground mb-4">
-            Transformez votre agence immobilière avec l'IA
+            Arrêtez de perdre du temps : transformez-le en croissance !
           </h3>
           <p className="text-muted-foreground mb-6">
-            Audit gratuit de 45 minutes pour identifier vos opportunités d'automatisation immobilière
+            Réservez un appel gratuit et découvrez comment nos solutions d'automatisation peuvent libérer votre temps, optimiser vos process et booster votre activité.
           </p>
-          
+
           <div className="space-y-4">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className={`w-full ${variant === 'primary' ? '' : 'bg-green-600 hover:bg-green-700'} font-semibold py-4 text-lg`}
               onClick={() => {
                 handleCTAClick('primary_consultation');
-                window.location.href = '/contact';
+                window.open('https://calendly.com/nadir-lahyani-agentimpact/30min', '_blank', 'noopener,noreferrer');
               }}
             >
-              Réserver ma consultation gratuite
+              Je réserve mon audit gratuit
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
+
+            <p className="text-sm text-muted-foreground">
+              Seulement 15 minutes pour comprendre comment nos solutions peuvent booster vos résultats.
+            </p>
 
             <div className="flex items-center justify-center space-x-4 text-sm text-muted-foreground">
               <span>✓ Sans engagement</span>

@@ -567,30 +567,29 @@ const Index = () => {
         <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="container mx-auto px-4 relative z-10">
+
+          {/* Titre strict du document, sans paragraphe supplémentaire */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Ils nous font déjà confiance
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+              Ils nous font déjà confiance :
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Découvrez comment nos solutions ont transformé le quotidien de ces professionnels.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto items-stretch">
             {/* Témoignage 1 : Jean M. */}
-            <Card className="bg-background/80 backdrop-blur-sm border-border hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
+            <Card className="bg-background/80 backdrop-blur-sm border-border hover:shadow-lg transition-all duration-300 relative overflow-hidden group h-full flex flex-col">
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-primary/5 -rotate-12 group-hover:scale-110 transition-transform duration-500" />
-              <CardContent className="p-8 relative z-10">
+              <CardContent className="p-8 relative z-10 flex flex-col h-full">
                 <div className="flex mb-4">
-                  {['star-1', 'star-2', 'star-3', 'star-4', 'star-5'].map((id) => (
-                    <Star key={id} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <p className="text-foreground text-lg mb-6 italic leading-relaxed">
+                <p className="text-foreground text-lg mb-6 italic leading-relaxed flex-grow">
                   "Depuis qu'on a mis en place l'automatisation, je ne rate plus aucun prospect et je gagne environ 5 heures par semaine sur le suivi. Franchement, je peux enfin me concentrer sur l'essentiel !"
                 </p>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center font-bold text-primary text-xl">
+                <div className="flex items-center space-x-4 mt-auto">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center font-bold text-primary text-xl shrink-0">
                     J
                   </div>
                   <div>
@@ -602,43 +601,43 @@ const Index = () => {
             </Card>
 
             {/* Témoignage 2 : Laurent D. */}
-            <Card className="bg-background/80 backdrop-blur-sm border-border hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
+            <Card className="bg-background/80 backdrop-blur-sm border-border hover:shadow-lg transition-all duration-300 relative overflow-hidden group h-full flex flex-col">
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-orange-500/5 -rotate-12 group-hover:scale-110 transition-transform duration-500" />
-              <CardContent className="p-8 relative z-10">
+              <CardContent className="p-8 relative z-10 flex flex-col h-full">
                 <div className="flex mb-4">
-                  {['star-1', 'star-2', 'star-3', 'star-4', 'star-5'].map((id) => (
-                    <Star key={id} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <p className="text-foreground text-lg mb-6 italic leading-relaxed">
+                <p className="text-foreground text-lg mb-6 italic leading-relaxed flex-grow">
                   "Les devis et factures se créent automatiquement et les relances sont faites sans que j'y touche. Je me sens beaucoup plus serein et mes clients sont ravis de la réactivité."
                 </p>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center font-bold text-orange-600 text-xl">
+                <div className="flex items-center space-x-4 mt-auto">
+                  <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center font-bold text-orange-600 text-xl shrink-0">
                     L
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground">Laurent D.</h4>
-                    <p className="text-sm text-muted-foreground">Entrepreneur BTP</p>
+                    <p className="text-sm text-muted-foreground">Entrepreneure BTP</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Témoignage 3 : Marc D. */}
-            <Card className="bg-background/80 backdrop-blur-sm border-border hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
+            <Card className="bg-background/80 backdrop-blur-sm border-border hover:shadow-lg transition-all duration-300 relative overflow-hidden group h-full flex flex-col">
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-blue-500/5 -rotate-12 group-hover:scale-110 transition-transform duration-500" />
-              <CardContent className="p-8 relative z-10">
+              <CardContent className="p-8 relative z-10 flex flex-col h-full">
                 <div className="flex mb-4">
-                  {['star-1', 'star-2', 'star-3', 'star-4', 'star-5'].map((id) => (
-                    <Star key={id} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <p className="text-foreground text-lg mb-6 italic leading-relaxed">
+                <p className="text-foreground text-lg mb-6 italic leading-relaxed flex-grow">
                   "Avant, nous passions des heures à trier et relancer les prospects. Maintenant, tout est centralisé et automatisé, on a vu les résultats dès le premier mois."
                 </p>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center font-bold text-blue-600 text-xl">
+                <div className="flex items-center space-x-4 mt-auto">
+                  <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center font-bold text-blue-600 text-xl shrink-0">
                     M
                   </div>
                   <div>
@@ -650,19 +649,19 @@ const Index = () => {
             </Card>
 
             {/* Témoignage 4 : Clara R. */}
-            <Card className="bg-background/80 backdrop-blur-sm border-border hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
+            <Card className="bg-background/80 backdrop-blur-sm border-border hover:shadow-lg transition-all duration-300 relative overflow-hidden group h-full flex flex-col">
               <Quote className="absolute -top-4 -right-4 w-24 h-24 text-purple-500/5 -rotate-12 group-hover:scale-110 transition-transform duration-500" />
-              <CardContent className="p-8 relative z-10">
+              <CardContent className="p-8 relative z-10 flex flex-col h-full">
                 <div className="flex mb-4">
-                  {['star-1', 'star-2', 'star-3', 'star-4', 'star-5'].map((id) => (
-                    <Star key={id} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <p className="text-foreground text-lg mb-6 italic leading-relaxed">
+                <p className="text-foreground text-lg mb-6 italic leading-relaxed flex-grow">
                   "Les suivis et relances automatiques m'ont libéré du temps. Je peux enfin me concentrer sur mes clients et mes missions à forte valeur ajoutée."
                 </p>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center font-bold text-purple-600 text-xl">
+                <div className="flex items-center space-x-4 mt-auto">
+                  <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center font-bold text-purple-600 text-xl shrink-0">
                     C
                   </div>
                   <div>

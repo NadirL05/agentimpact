@@ -1,23 +1,30 @@
-import { 
-  Brain, 
-  Sparkles, 
-  ArrowRight, 
-  Zap, 
-  Shield, 
-  Users, 
-  TrendingUp, 
-  ChevronRight, 
+import {
+  Brain,
+  Sparkles,
+  ArrowRight,
+  Zap,
+  Shield,
+  Users,
+  TrendingUp,
+  ChevronRight,
   Settings,
   BarChart3,
   Lightbulb,
   CheckCircle,
-  Rocket,
   Clock,
   DollarSign,
-  MessageSquare,
   Code,
   Bot,
-  Mail
+  Mail,
+  Building2,
+  HardHat,
+  Briefcase,
+  LayoutGrid,
+  Search,
+  Wrench,
+  LineChart,
+  Star,
+  Quote
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -27,11 +34,9 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 import { useAnalytics } from "@/lib/analytics";
-import ConversionOptimizer from "@/components/conversion/ConversionOptimizer";
 import LeadMagnet from "@/components/marketing/LeadMagnet";
 import FloatingActionButton from "@/components/ui/floating-action-button";
 import SEOHead from "@/components/SEOHead";
-import SocialProof from "@/components/marketing/SocialProof";
 import heroImage from "@/assets/hero-supplier-management.jpg";
 import { CalendlyWidget } from "@/components/calendly/CalendlyWidget";
 
@@ -371,53 +376,345 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Preuve Sociale Section */}
-      <section className="py-16 bg-muted">
+      {/* Section Cartes Métiers (Solutions sur mesure) */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <SocialProof variant="detailed" />
-        </div>
-      </section>
-
-
-      {/* Conversion Optimizer Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <ConversionOptimizer 
-            variant="primary"
-            showTestimonials={true}
-            showTrustSignals={true}
-          />
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-primary via-[hsl(173,80%,25%)] to-primary">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto text-white">
-            <h2 className="text-3xl font-bold mb-4">
-              Automatisez votre gestion administrative aujourd'hui
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              Des solutions sur mesure pour chaque activité
             </h2>
-            <p className="text-xl mb-8 text-primary-foreground/80">
-              Automatisez votre prospection et multipliez vos transactions immobilières avec l'IA
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Chaque entreprise est différente. Nos solutions s'adaptent à vos besoins et à vos processus, pour transformer vos tâches en opportunités concrètes et mesurables.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-white text-primary hover:bg-muted font-semibold"
-                onClick={() => navigate('/services')}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
+            {/* Carte 1 : Immobilier */}
+            <Card className="group hover:shadow-xl hover:border-primary/50 transition-all duration-300 bg-background">
+              <CardContent className="p-8 flex flex-col h-full">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Building2 className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Immobilier</h3>
+                <p className="font-medium text-foreground mb-2">Ne laissez plus passer vos prospects</p>
+                <p className="text-muted-foreground text-sm mb-8 flex-grow">
+                  Plus de transactions conclues sans effort supplémentaire.
+                </p>
+                <Button
+                  variant="ghost"
+                  className="p-0 text-primary hover:text-primary/80 hover:bg-transparent justify-start w-fit group/btn"
+                  onClick={() => navigate('/services')}
+                >
+                  Découvrir cette solution <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Carte 2 : BTP */}
+            <Card className="group hover:shadow-xl hover:border-orange-500/50 transition-all duration-300 bg-background">
+              <CardContent className="p-8 flex flex-col h-full">
+                <div className="w-14 h-14 bg-orange-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <HardHat className="w-7 h-7 text-orange-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">BTP</h3>
+                <p className="font-medium text-foreground mb-2">Vos projets sous contrôle, sans stress</p>
+                <p className="text-muted-foreground text-sm mb-8 flex-grow">
+                  Gagnez du temps et évitez les erreurs coûteuses.
+                </p>
+                <Button
+                  variant="ghost"
+                  className="p-0 text-orange-500 hover:text-orange-600 hover:bg-transparent justify-start w-fit group/btn"
+                  onClick={() => navigate('/services')}
+                >
+                  Découvrir cette solution <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Carte 3 : PME & Indépendants */}
+            <Card className="group hover:shadow-xl hover:border-blue-500/50 transition-all duration-300 bg-background">
+              <CardContent className="p-8 flex flex-col h-full">
+                <div className="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Briefcase className="w-7 h-7 text-blue-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">PME & Indép.</h3>
+                <p className="font-medium text-foreground mb-2">Libérez du temps pour ce qui compte vraiment</p>
+                <p className="text-muted-foreground text-sm mb-8 flex-grow">
+                  Concentrez-vous sur le développement de votre chiffre d'affaires.
+                </p>
+                <Button
+                  variant="ghost"
+                  className="p-0 text-blue-500 hover:text-blue-600 hover:bg-transparent justify-start w-fit group/btn"
+                  onClick={() => navigate('/services')}
+                >
+                  Découvrir cette solution <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Carte 4 : Autres métiers */}
+            <Card className="group hover:shadow-xl hover:border-purple-500/50 transition-all duration-300 bg-background">
+              <CardContent className="p-8 flex flex-col h-full">
+                <div className="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <LayoutGrid className="w-7 h-7 text-purple-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Autres métiers</h3>
+                <p className="font-medium text-foreground mb-2">Une solution adaptée à votre activité</p>
+                <p className="text-muted-foreground text-sm mb-8 flex-grow">
+                  Exploitez vos opportunités et optimisez votre organisation, quel que soit votre secteur.
+                </p>
+                <Button
+                  variant="ghost"
+                  className="p-0 text-purple-500 hover:text-purple-600 hover:bg-transparent justify-start w-fit group/btn"
+                  onClick={() => navigate('/services')}
+                >
+                  Découvrir les possibilités <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-base md:text-lg font-medium text-muted-foreground bg-background inline-block px-6 py-3 rounded-full border border-border/50 shadow-sm">
+              <Sparkles className="w-5 h-5 inline-block text-primary mr-2 -mt-1" />
+              Et ce n'est qu'un aperçu : nos solutions s'adaptent à votre activité, quel que soit votre métier.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Notre Approche (Méthodologie) */}
+      <section className="py-20 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              Notre approche
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Une méthode éprouvée en 4 étapes pour intégrer l'automatisation sans perturber votre activité.
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto relative">
+            {/* Ligne connectrice (visible uniquement sur desktop) */}
+            <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent -translate-y-1/2 z-0"></div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+              {/* Etape 1 : Analyse */}
+              <div className="bg-card border border-border/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative">
+                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                  1
+                </div>
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto md:mx-0">
+                  <Search className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3 text-center md:text-left">Analyse</h3>
+                <p className="text-muted-foreground text-sm text-center md:text-left leading-relaxed">
+                  Nous étudions votre organisation et identifions les opportunités d'automatisation.
+                </p>
+              </div>
+
+              {/* Etape 2 : Conception */}
+              <div className="bg-card border border-border/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative md:mt-8">
+                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                  2
+                </div>
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto md:mx-0">
+                  <Lightbulb className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3 text-center md:text-left">Conception</h3>
+                <p className="text-muted-foreground text-sm text-center md:text-left leading-relaxed">
+                  Nous concevons un système adapté à votre activité et à vos outils.
+                </p>
+              </div>
+
+              {/* Etape 3 : Mise en place */}
+              <div className="bg-card border border-border/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative">
+                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                  3
+                </div>
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto md:mx-0">
+                  <Wrench className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3 text-center md:text-left">Mise en place</h3>
+                <p className="text-muted-foreground text-sm text-center md:text-left leading-relaxed">
+                  Nous installons les automatisations et les intégrons dans votre fonctionnement.
+                </p>
+              </div>
+
+              {/* Etape 4 : Optimisation */}
+              <div className="bg-card border border-border/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative md:mt-8">
+                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                  4
+                </div>
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto md:mx-0">
+                  <LineChart className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3 text-center md:text-left">Optimisation</h3>
+                <p className="text-muted-foreground text-sm text-center md:text-left leading-relaxed">
+                  Nous ajustons le système afin qu'il reste parfaitement optimal pour votre entreprise.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Preuve Sociale Section (Témoignages) */}
+      <section className="py-20 bg-muted/50 relative overflow-hidden">
+        {/* Cercles de décoration en arrière-plan */}
+        <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              Ils nous font déjà confiance
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Découvrez comment nos solutions ont transformé le quotidien de ces professionnels.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {/* Témoignage 1 : Jean M. */}
+            <Card className="bg-background/80 backdrop-blur-sm border-border hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
+              <Quote className="absolute -top-4 -right-4 w-24 h-24 text-primary/5 -rotate-12 group-hover:scale-110 transition-transform duration-500" />
+              <CardContent className="p-8 relative z-10">
+                <div className="flex mb-4">
+                  {['star-1', 'star-2', 'star-3', 'star-4', 'star-5'].map((id) => (
+                    <Star key={id} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-foreground text-lg mb-6 italic leading-relaxed">
+                  "Depuis qu'on a mis en place l'automatisation, je ne rate plus aucun prospect et je gagne environ 5 heures par semaine sur le suivi. Franchement, je peux enfin me concentrer sur l'essentiel !"
+                </p>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center font-bold text-primary text-xl">
+                    J
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground">Jean M.</h4>
+                    <p className="text-sm text-muted-foreground">Agent immobilier</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Témoignage 2 : Laurent D. */}
+            <Card className="bg-background/80 backdrop-blur-sm border-border hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
+              <Quote className="absolute -top-4 -right-4 w-24 h-24 text-orange-500/5 -rotate-12 group-hover:scale-110 transition-transform duration-500" />
+              <CardContent className="p-8 relative z-10">
+                <div className="flex mb-4">
+                  {['star-1', 'star-2', 'star-3', 'star-4', 'star-5'].map((id) => (
+                    <Star key={id} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-foreground text-lg mb-6 italic leading-relaxed">
+                  "Les devis et factures se créent automatiquement et les relances sont faites sans que j'y touche. Je me sens beaucoup plus serein et mes clients sont ravis de la réactivité."
+                </p>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center font-bold text-orange-600 text-xl">
+                    L
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground">Laurent D.</h4>
+                    <p className="text-sm text-muted-foreground">Entrepreneur BTP</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Témoignage 3 : Marc D. */}
+            <Card className="bg-background/80 backdrop-blur-sm border-border hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
+              <Quote className="absolute -top-4 -right-4 w-24 h-24 text-blue-500/5 -rotate-12 group-hover:scale-110 transition-transform duration-500" />
+              <CardContent className="p-8 relative z-10">
+                <div className="flex mb-4">
+                  {['star-1', 'star-2', 'star-3', 'star-4', 'star-5'].map((id) => (
+                    <Star key={id} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-foreground text-lg mb-6 italic leading-relaxed">
+                  "Avant, nous passions des heures à trier et relancer les prospects. Maintenant, tout est centralisé et automatisé, on a vu les résultats dès le premier mois."
+                </p>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center font-bold text-blue-600 text-xl">
+                    M
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground">Marc D.</h4>
+                    <p className="text-sm text-muted-foreground">Gérant PME</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Témoignage 4 : Clara R. */}
+            <Card className="bg-background/80 backdrop-blur-sm border-border hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
+              <Quote className="absolute -top-4 -right-4 w-24 h-24 text-purple-500/5 -rotate-12 group-hover:scale-110 transition-transform duration-500" />
+              <CardContent className="p-8 relative z-10">
+                <div className="flex mb-4">
+                  {['star-1', 'star-2', 'star-3', 'star-4', 'star-5'].map((id) => (
+                    <Star key={id} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-foreground text-lg mb-6 italic leading-relaxed">
+                  "Les suivis et relances automatiques m'ont libéré du temps. Je peux enfin me concentrer sur mes clients et mes missions à forte valeur ajoutée."
+                </p>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center font-bold text-purple-600 text-xl">
+                    C
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground">Clara R.</h4>
+                    <p className="text-sm text-muted-foreground">Consultante indépendante</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+
+      {/* CTA FINAL Section */}
+      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-[hsl(210,29%,12%)] via-[hsl(210,29%,8%)] to-background border-t border-border/20">
+        {/* Effets de lumière en arrière-plan */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
+              Arrêtez de perdre du temps : <br className="hidden md:block" />
+              <span className="text-primary">transformez-le en croissance !</span>
+            </h2>
+            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+              Réservez un appel gratuit et découvrez comment nos solutions d'automatisation peuvent libérer votre temps, optimiser vos process et booster votre activité.
+            </p>
+
+            <div className="flex flex-col items-center justify-center">
+              <Button
+                onClick={() => {
+                  trackUserAction('cta_final_click', {
+                    location: 'footer_cta',
+                    button_text: 'Je réserve mon audit gratuit'
+                  });
+                  window.open('https://calendly.com/nadir-lahyani-agentimpact/30min', '_blank', 'noopener,noreferrer');
+                }}
+                size="lg"
+                className="text-xl px-10 py-8 h-auto shadow-[0_0_30px_rgba(var(--primary),0.3)] hover:shadow-[0_0_50px_rgba(var(--primary),0.5)] transition-all duration-300 hover:scale-105"
               >
-                <Rocket className="w-5 h-5 mr-2" />
-                Découvrir les services
+                <Zap className="w-6 h-6 mr-3 animate-pulse" />
+                Je réserve mon audit gratuit
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white/20 backdrop-blur-sm bg-white/10"
-                onClick={() => navigate('/support')}
-              >
-                <MessageSquare className="w-5 h-5 mr-2" />
-                Discuter de mon besoin
-              </Button>
+
+              {/* Texte de réassurance sous le bouton */}
+              <div className="mt-8 inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full border border-white/10">
+                <Clock className="w-5 h-5 text-primary" />
+                <span className="text-sm md:text-base font-medium text-white/80">
+                  Seulement 15 minutes pour comprendre comment nos solutions peuvent booster vos résultats.
+                </span>
+              </div>
             </div>
           </div>
         </div>

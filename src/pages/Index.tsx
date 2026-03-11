@@ -101,70 +101,72 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section - IA Services */}
+      {/* Hero Section - Automatisation PME & Indépendants */}
       <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-b from-[hsl(210,29%,8%)] to-secondary">
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="flex justify-center mb-6">
-              <div className="flex items-center space-x-2 bg-secondary/50 backdrop-blur-md px-4 py-2 rounded-full border border-border/30">
-                <Brain className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium text-muted-foreground">Spécialiste IA & Automatisation</span>
+              <div className="flex items-center space-x-2 bg-primary/20 backdrop-blur-md px-4 py-2 rounded-full border border-primary/30">
+                <Zap className="w-5 h-5 text-primary" />
+                <span className="text-sm font-medium text-white/90">Pour les PME et Indépendants</span>
               </div>
             </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Boostez votre activité immobilière avec <span className="text-primary">l'Intelligence Artificielle</span>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+              Transformez vos tâches répétitives en <br className="hidden md:block" />
+              <span className="text-primary">opportunités de croissance</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Solutions IA spécialisées pour automatiser votre prospection, gérer vos biens et optimiser votre relation client. 
-              Gagnez 70% de temps sur vos tâches administratives.
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+              Automatisez les actions chronophages de votre entreprise pour vous concentrer sur votre vrai cœur de métier ! Nous aidons les PME et les indépendants à gagner du temps, sécuriser leurs opportunités commerciales et simplifier leur organisation grâce à des systèmes d'automatisation et d'intelligence artificielle adaptés à leur activité.
             </p>
-            
-            <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-center">
+
+            <div className="mb-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                onClick={() => {
+                  trackUserAction('cta_audit_click', {
+                    location: 'hero_section',
+                    button_text: 'Réserver un audit gratuit'
+                  });
+                  window.open('https://calendly.com/nadir-lahyani-agentimpact/30min', '_blank');
+                }}
+                size="lg"
+                className="text-lg px-8 py-6 h-auto shadow-[0_0_20px_rgba(var(--primary),0.3)] hover:shadow-[0_0_30px_rgba(var(--primary),0.5)] transition-all duration-300"
+              >
+                <Zap className="w-5 h-5 mr-2 animate-pulse" />
+                Réserver un audit gratuit
+              </Button>
               <Button
                 onClick={() => {
                   trackUserAction('cta_services_click', {
                     location: 'hero_section',
-                    button_text: 'Découvrir mes Services'
+                    button_text: 'Voir comment automatiser'
                   });
                   navigate('/services');
                 }}
                 size="lg"
-                className="text-lg px-8 py-4"
-              >
-                <Sparkles className="w-5 h-5 mr-2" />
-                Découvrir mes services
-              </Button>
-              <Button
-                onClick={() => {
-                  trackUserAction('cta_consultation_click', {
-                    location: 'hero_section',
-                    button_text: 'Consultation Gratuite'
-                  });
-                  navigate('/contact');
-                }}
-                size="lg"
                 variant="outline"
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-4"
+                className="border-2 border-white/20 text-white hover:bg-white/10 text-lg px-8 py-6 h-auto transition-all"
               >
-                Consultation gratuite
+                Voir comment automatiser
               </Button>
             </div>
 
-            <div className="flex justify-center items-center space-x-8 text-sm text-muted-foreground">
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>Solutions personnalisées</span>
+            {/* Réassurance sous forme de "Pills" */}
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-sm font-medium text-white/80">
+              <div className="flex items-center space-x-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span>Audit offert</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Users className="w-4 h-4 text-primary" />
-                <span>Accompagnement dédié</span>
+              <div className="flex items-center space-x-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                <Shield className="w-4 h-4 text-primary" />
+                <span>Sans engagement</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <TrendingUp className="w-4 h-4 text-primary" />
-                <span>Optimisation des processus</span>
+              <div className="flex items-center space-x-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                <Clock className="w-4 h-4 text-primary" />
+                <span>Réponse en 24h</span>
               </div>
             </div>
+
           </div>
         </div>
       </section>

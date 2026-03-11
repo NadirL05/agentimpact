@@ -17,7 +17,11 @@ import {
   MessageSquare,
   Code,
   Bot,
-  Mail
+  Mail,
+  Building2,
+  HardHat,
+  Briefcase,
+  LayoutGrid
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -367,6 +371,113 @@ const Index = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Cartes Métiers (Solutions sur mesure) */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              Des solutions sur mesure pour chaque activité
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Chaque entreprise est différente. Nos solutions s'adaptent à vos besoins et à vos processus, pour transformer vos tâches en opportunités concrètes et mesurables.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
+            {/* Carte 1 : Immobilier */}
+            <Card className="group hover:shadow-xl hover:border-primary/50 transition-all duration-300 bg-background">
+              <CardContent className="p-8 flex flex-col h-full">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Building2 className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Immobilier</h3>
+                <p className="font-medium text-foreground mb-2">Ne laissez plus passer vos prospects</p>
+                <p className="text-muted-foreground text-sm mb-8 flex-grow">
+                  Plus de transactions conclues sans effort supplémentaire.
+                </p>
+                <Button
+                  variant="ghost"
+                  className="p-0 text-primary hover:text-primary/80 hover:bg-transparent justify-start w-fit group/btn"
+                  onClick={() => navigate('/services')}
+                >
+                  Découvrir cette solution <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Carte 2 : BTP */}
+            <Card className="group hover:shadow-xl hover:border-orange-500/50 transition-all duration-300 bg-background">
+              <CardContent className="p-8 flex flex-col h-full">
+                <div className="w-14 h-14 bg-orange-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <HardHat className="w-7 h-7 text-orange-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">BTP</h3>
+                <p className="font-medium text-foreground mb-2">Vos projets sous contrôle, sans stress</p>
+                <p className="text-muted-foreground text-sm mb-8 flex-grow">
+                  Gagnez du temps et évitez les erreurs coûteuses.
+                </p>
+                <Button
+                  variant="ghost"
+                  className="p-0 text-orange-500 hover:text-orange-600 hover:bg-transparent justify-start w-fit group/btn"
+                  onClick={() => navigate('/services')}
+                >
+                  Découvrir cette solution <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Carte 3 : PME & Indépendants */}
+            <Card className="group hover:shadow-xl hover:border-blue-500/50 transition-all duration-300 bg-background">
+              <CardContent className="p-8 flex flex-col h-full">
+                <div className="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Briefcase className="w-7 h-7 text-blue-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">PME & Indép.</h3>
+                <p className="font-medium text-foreground mb-2">Libérez du temps pour ce qui compte vraiment</p>
+                <p className="text-muted-foreground text-sm mb-8 flex-grow">
+                  Concentrez-vous sur le développement de votre chiffre d'affaires.
+                </p>
+                <Button
+                  variant="ghost"
+                  className="p-0 text-blue-500 hover:text-blue-600 hover:bg-transparent justify-start w-fit group/btn"
+                  onClick={() => navigate('/services')}
+                >
+                  Découvrir cette solution <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Carte 4 : Autres métiers */}
+            <Card className="group hover:shadow-xl hover:border-purple-500/50 transition-all duration-300 bg-background">
+              <CardContent className="p-8 flex flex-col h-full">
+                <div className="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <LayoutGrid className="w-7 h-7 text-purple-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Autres métiers</h3>
+                <p className="font-medium text-foreground mb-2">Une solution adaptée à votre activité</p>
+                <p className="text-muted-foreground text-sm mb-8 flex-grow">
+                  Exploitez vos opportunités et optimisez votre organisation, quel que soit votre secteur.
+                </p>
+                <Button
+                  variant="ghost"
+                  className="p-0 text-purple-500 hover:text-purple-600 hover:bg-transparent justify-start w-fit group/btn"
+                  onClick={() => navigate('/services')}
+                >
+                  Découvrir les possibilités <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-base md:text-lg font-medium text-muted-foreground bg-background inline-block px-6 py-3 rounded-full border border-border/50 shadow-sm">
+              <Sparkles className="w-5 h-5 inline-block text-primary mr-2 -mt-1" />
+              Et ce n'est qu'un aperçu : nos solutions s'adaptent à votre activité, quel que soit votre métier.
+            </p>
           </div>
         </div>
       </section>
